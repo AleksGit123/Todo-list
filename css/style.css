@@ -1,0 +1,110 @@
+body {
+    background-color: #303952;
+    min-height: 100dvh;
+    user-select: none;
+    cursor: url("../images/pencil.png") 24 24, pointer;
+    padding-top: 10%;
+}
+
+.font {
+    font-family: "Edu QLD Hand", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+::placeholder {
+    word-spacing: 10px;
+}
+
+input {
+    display: block;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px dashed #69b27c;
+    border-radius: 2px;
+    font-size: 24px;
+    line-height: 20px;
+    color: #53a5c7;
+    padding: 15px 0 10px 15px;
+    cursor: url("../images/writing-pencil.png") 24 24, pointer;
+    margin: auto auto 30px auto;
+}
+
+ul,
+ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+}
+
+.todo_list_div {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom right, #34495E, #4A607D);
+    border: 2px dashed #E0E0E0;
+    width: min(95%, 500px);
+    margin: auto;
+    padding: 25px 15px 25px 20px;
+    box-shadow: 0 15px 15px 0px #4a607d9c;
+}
+
+.todo_ul {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    color: #AABBCF;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.todo_li {
+    display: flex;
+    word-break: break-all;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.todo_li::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #e0e0e093;
+    border-radius: 10px;
+}
+
+.time {
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.rubber_svg {
+    width: 33px;
+    height: 33px;
+}
+
+.rubber_gif {
+    width: 42px;
+    height: 42px;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.done_activities {
+    color: #FFFFFF;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 600;
+    align-self: flex-end;
+    margin-top: 50px;
+}
+
+.hide {
+    display: none;
+}
