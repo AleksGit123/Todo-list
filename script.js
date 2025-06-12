@@ -1,14 +1,21 @@
 "use strict" 
 function addTodo(text,time) {
  return `
-       <li class="todo_li">
-                <div>
+        <li class="todo_li">
+                  <div class="event_time">
                     <p class="activities">${text}</p>
                     <p class="time">${time}</p>
                 </div>
 
-                <img src="images/rubber.svg" alt="rubber svg" class="rubber_svg">
-                <img src="images/rubberGif.gif" alt="rubber gif" class="rubber_gif hide">
+
+                <div class="button_div">
+                    <button class="rubber_btn">
+                        <img src="images/rubber.svg" alt="rubber svg" class="rubber_svg">
+                    </button>
+                    <button class="target_btn">
+                        <img src="images/target.svg" alt="target icon" class="target">
+                    </button>
+                </div>
             </li>    
 ` 
 }
@@ -25,28 +32,35 @@ let doneNumbers = document.querySelector(".done_number");
 let time = document.querySelector(".time");
 let date = new Date();
 let exactdate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}, ${date.getHours()}:${date.getMinutes()}`
+let done = 0;
 
 // rubber gif and svg
 function rubberFunction(){
-    let rubberSvg = document.querySelector(".rubber_svg");
-    let rubberGif = document.querySelector(".rubber_gif");
+    let targetBtn = document.querySelectorAll(".target_btn");
+    let rubberSvg = document.querySelectorAll(".rubber_svg");
+    let todoLi = document.querySelectorAll(".todo_li");
+    let accomplished = document.querySelector(".done_number");
 
-    rubberSvg.addEventListener("mouseover",()=>{
-        rubberSvg.classList.add("hide")
-        rubberGif.classList.remove("hide");
+    todoLi.forEach((element,index) =>{
+
+        targetBtn[index].addEventListener("click",function hendler(){
+            if (!this.disabled) {
+                this.disabled = true;
+                done++;
+                doneNumbers.innerHTML = done;
+            }
+        })
+
+        rubberSvg[index].addEventListener("click",()=>{
+            element.remove();
+            done--;
+            doneNumbers.innerHTML = done;
+        })
+
+        
+
     })
-    rubberSvg.addEventListener("mouseout",()=>{
-        rubberSvg.classList.remove("hide")
-        rubberGif.classList.add("hide");
-    })
-    
-    rubberSvg.addEventListener("click",()=>{
-        todoUl.innerHTML = "";
-    })
-    
-    rubberGif.addEventListener("click",()=>{
-        todoUl.innerHTML = "";
-    })
+
     
 }
 
@@ -58,6 +72,7 @@ document.addEventListener("keydown",(e) =>{
 
     if(e.key == "Enter"){
         todoUl.innerHTML += addTodo(input.value,exactdate);
+        rubberFunction();
     }
 
 })

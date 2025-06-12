@@ -2,7 +2,7 @@ body {
     background-color: #303952;
     min-height: 100dvh;
     user-select: none;
-    cursor: url("../images/pencil.png") 24 24, pointer;
+    cursor: url("../images/pencil.png") 0 34, pointer;
     padding-top: 10%;
 }
 
@@ -27,7 +27,7 @@ input {
     line-height: 20px;
     color: #53a5c7;
     padding: 15px 0 10px 15px;
-    cursor: url("../images/writing-pencil.png") 24 24, pointer;
+    cursor: url("../images/writing-pencil.png") 0 34, pointer;
     margin: auto auto 30px auto;
 }
 
@@ -55,6 +55,7 @@ ol {
     color: #AABBCF;
     font-size: 24px;
     font-weight: 600;
+
 }
 
 .todo_li {
@@ -64,12 +65,15 @@ ol {
     justify-content: space-between;
     align-items: center;
     column-gap: 15px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .todo_li::after {
     content: "";
     position: absolute;
     bottom: -15px;
+    left: 0;
     display: block;
     width: 100%;
     height: 2px;
@@ -82,14 +86,40 @@ ol {
     margin-top: 15px;
 }
 
-.rubber_svg {
-    width: 33px;
-    height: 33px;
+.button_div {
+    display: flex;
+    column-gap: 20px;
 }
 
-.rubber_gif {
-    width: 42px;
-    height: 42px;
+.rubber_btn {
+    display: flex;
+    column-gap: 8px;
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+    cursor: url("../images/pencil.png") 0 34, pointer;
+    /* border: 4px solid red; */
+    padding: 0;
+
+}
+
+.rubber_svg {
+    width: 100%;
+    height: 100%;
+}
+
+.target_btn {
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    cursor: url("../images/pencil.png") 0 34, pointer;
+
+}
+
+.target {
+    width: 100%;
+    height: 100%;
 }
 
 .done {
