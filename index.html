@@ -15,6 +15,7 @@
     <script src="https://kit.fontawesome.com/7d5224a84d.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
 
     <link rel="shortcut icon" href="images/checklist.svg" type="image/x-icon">
     <title>Todo</title>
@@ -22,17 +23,60 @@
 
 <body>
 
-    <input type="text" id="activity" class="font" placeholder="Add activity">
+    <main class="main_tag">
+        <input type="text" id="activity" class="font" placeholder="Add activity">
 
-    <div class="todo_list_div">
-        <ul class="todo_ul font">
-         
-        </ul>
+        <div class="todo_list_div">
+            <div class="sort_div">
 
-        <h2 class="done_activities font">Accomplished:
-            <span class="done_number">0</span>
-        </h2>
-    </div>
+                <!-- div for sorting -->
+                <ul class="sort_ul">
+                    <li class="sort_li all">
+                        <p class="sort_p  font">All</p>
+                    </li>
+                    <li class="sort_li completed">
+                        <p class="sort_p  font">Done</p>
+                    </li>
+                    <li class="sort_li incomplete">
+                        <p class="sort_p  font">Incomplete</p>
+                    </li>
+                </ul>
+            </div>
+
+            <ul class="todo_ul font">
+                <!-- <li class="todo_li">
+                    <div class="event_time">
+                        <p class="activities">${text}</p>
+                        <p class="time">${time}</p>
+                    </div>
+
+
+                    <div class="button_div">
+                        <button class="rubber_btn">
+                            <img src="images/rubber.svg" alt="rubber svg" class="rubber_svg">
+                        </button>
+                        <button class="target_btn">
+                            <img src="images/target.svg" alt="target icon" class="target">
+                        </button>
+                    </div>
+                </li> -->
+            </ul>
+
+            <h2 class="done_activities font">Accomplished:
+                <span class="done_number">0</span>
+            </h2>
+        </div>
+
+        <button class="delete_all_btn font">
+            <img src="images/trash.svg" alt="trash gif" class="delete_all_svg">
+            <p class="delete_all">Delete All</p>
+
+        </button>
+
+    </main>
+
+
+
 
     <script src="script.js"></script>
 </body>

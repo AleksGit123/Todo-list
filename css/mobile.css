@@ -1,0 +1,21 @@
+@media(max-width:430px) {
+    input {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .done_activities {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .delete_all {
+        font-size: 16px;
+    }
+
+    .delete_all_svg {
+        width: 27px;
+        height: 27px;
+    }
+
+}
