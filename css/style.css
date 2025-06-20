@@ -7,7 +7,7 @@ body {
     background-color: #303952;
     min-height: 100dvh;
     user-select: none;
-    padding-top: 10%;
+    padding-top: 3%;
 }
 
 .font {
@@ -55,12 +55,17 @@ ol {
 .todo_list_div {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     row-gap: 30px;
     background-image: linear-gradient(to bottom right, #34495E, #4A607D);
     border: 2px dashed #E0E0E0;
     width: 80%;
+    max-height: 400px;
     padding: 25px 15px 25px 20px;
     box-shadow: 0 15px 15px 0px #4a607d9c;
+    overflow-y: scroll;
+    scrollbar-width: none;
+
 }
 
 .sort_div {
@@ -71,6 +76,7 @@ ol {
 .sort_ul {
     display: flex;
     column-gap: 25px;
+
 }
 
 .sort_li {
@@ -151,7 +157,6 @@ ol {
     width: 32px;
     height: 32px;
     padding: 0;
-
 }
 
 .target {
@@ -168,8 +173,8 @@ ol {
     text-decoration: underline;
     font-size: 18px;
     font-weight: 600;
-    align-self: flex-end;
     margin-top: 30px;
+    align-self: flex-end;
 }
 
 .delete_all_btn {
